@@ -1,0 +1,132 @@
+
+html {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.background-color {
+    background: linear-gradient(20deg, rgba(31,94,107,1) 0%, rgba(102,145,154,1) 48%, rgba(129,164,172,1) 59%);;
+    margin: 0;
+
+}
+.content-container {
+    max-width: 65%;
+    margin: 0 auto;
+    border: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    max-width: 100%;
+    margin: 0;
+}
+
+.header__text {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.content {
+    background-color: whitesmoke;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border: solid 0.2px black;
+}
+
+.list-item {
+    background: linear-gradient(20deg, rgba(244,221,221,1) 0%, rgba(255,255,255,1) 99%);
+    /***border: 1px solid blue;**/
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 10px 5px 5px gray;
+}
+
+.list-info {
+    border-right: 1px solid grey;
+    padding: 0.6em;
+    width:20%;
+    margin: 0 ;
+}
+
+.list-description {
+    padding: 0.6em;
+    width: 40%;
+}
+
+.icons, .icon {
+    width: 5%;
+    margin: 1em ;
+    margin-right: 2em;
+    margin-left: 2em;
+    max-width: 100%;
+    
+}
+
+.icons , .icon:hover {
+    transform: scale(1.1);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    color: white;
+    background-color: mediumpurple;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 0.8em 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+
+.btn:hover {
+    color: lavender;
+    transform: scale(1.1);
+    box-shadow: 5px 2px 5px gray;
+}
+
+
+.form__new-do {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+
+@media screen  and (max-width: 850px){
+    .list-item{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list-info {
+        width: 95%;
+    }
+
+    .list-description {
+        width: 95%;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    
+}
