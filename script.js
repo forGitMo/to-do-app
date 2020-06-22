@@ -19,9 +19,18 @@ Array.from(buttonElements).forEach(element => {
         alert('1');
     })
     element.addEventListener('mouseover', function (){
-        element.style.backgroundColor ="red";
+        element.style.backgroundColor = 'red';
     })
     element.addEventListener('mouseleave', function (){
         element.style.backgroundColor ="green";
+    })
+});
+
+const fromButtonElements = document.getElementsByClassName('form-btn');
+
+Array.from(fromButtonElements).forEach(element => {
+    element.addEventListener ('mouseover', function(){
+        element.style.backgroundColor ='purple';
+        element.style.color = 'white';
     })
 });

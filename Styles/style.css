@@ -4,7 +4,7 @@ html {
 }
 
 .background-color {
-    background: linear-gradient(20deg, rgba(31,94,107,1) 0%, rgba(102,145,154,1) 48%, rgba(129,164,172,1) 59%);;
+    background-color: #f8d8dd;
     margin: 0;
 
 }
@@ -27,6 +27,7 @@ html {
     color: white;
     font-weight: 600;
     font-size: 3em;
+    text-shadow: 0 0 5px black;
 }
 
 .content {
