@@ -15,8 +15,13 @@ const buttonElements = document.getElementsByClassName("btn");
 
 
 Array.from(buttonElements).forEach(element => {
-    element.addEventListener('click', function (event){
+    element.addEventListener('click', function (){
         alert('1');
     })
+    element.addEventListener('mouseover', function (){
+        element.style.backgroundColor ="red";
+    })
+    element.addEventListener('mouseleave', function (){
+        element.style.backgroundColor ="green";
+    })
 });
-
