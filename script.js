@@ -11,7 +11,12 @@ do {
 } while (i < 1);
 */
 
-const buttonElemtnt = document.getElementsByClassName("btn");
+const buttonElemtnt = document.getElementById("btn");
+
+
+buttonElemtnt.addEventListener('click', function (event){
+    alert('1');
+})
 
 buttonElemtnt.addEventListener("click", {
     handleElement: function (event) {
