@@ -24,30 +24,59 @@ Array.from(buttonElements).forEach(element => {
     })
 });
 
-document.body.onload = addElement;
 
-function addElement () { 
-  // create a new div element 
-  var newDiv = document.createElement("div"); 
-  // and give it some content 
-  var newContent = document.createTextNode("Hi there and greetings!"); 
-  // add the text node to the newly created div
-  newDiv.appendChild(newContent);  
+const todoListElements = document.getElementsByClassName("list");
 
-  // add the newly created element and its content into the DOM 
-  var currentDiv = document.getElementById("div1"); 
-  document.body.insertBefore(newDiv, currentDiv); 
+
+function generateTodoElement(textParameter) {    
+    const card = document.createElement("div");
+    const liTi = document.createElement("div");
+    liTi.classList.add('list-item');
+    const liDe = document.createElement("div"); 
+    liDe.classList.add('list-description');
+    
+    liTi.appendChild(generateTodoInfo());
+    liDe.appendChild(generateTodoDes());
+    liTi.appendChild(liDe);
+    card.appendChild(liTi);
+    
+    return card;
 }
 
+function generateTodoInfo(){
+    const infoEl = createElementWithClass("div","list-info");
+    const title = createElementWithClass("h3","title");
+    const titleText = document.createTextNode("codeing");
+    const date = createElementWithClass("p","day");
+    const dateText = document.createTextNode("Monday");
+    const time = createElementWithClass("p","time");
+    const timeText = document.createTextNode("13:00 Uhr");
+    title.appendChild(titleText);
+    infoEl.appendChild(title);
+    date.appendChild(dateText);
+    infoEl.appendChild(date);
+    time.appendChild(timeText);
+    infoEl.appendChild(time);
+    return infoEl;
+}
 
-const todoListElements = document.getElementsByClassName("list-info");
+/**** description wird außherhalb des list-item erzeugt. */
+const beschreibung = "lorem Exkalibur";
 
-function generateTodoElement(textParameter) {
-    const liTi = document.createElement("h3");
-    liTi.classList.add('title');
-    const textEle = document.createTextNode(textParameter);
-    liTi.appendChild(textEle);
-    return liTi;
+
+function generateTodoDes (){
+    const infoEl =createElementWithClass("div","list-description")
+    const listDescription = createElementWithClass("p", "description");
+    const desText = document.createTextNode(beschreibung);
+    listDescription.appendChild(desText);
+    infoEl.appendChild(listDescription);
+    return infoEl;
+}
+
+function createElementWithClass(elementtype, elementclass){
+    const infoEl = document.createElement(elementtype);
+    infoEl.classList.add(elementclass); 
+    return infoEl;
 }
 
 let counter = 0;
@@ -55,9 +84,10 @@ let counter = 0;
 if (buttonElements.length > 0){
     const singleButton = buttonElements[0];
     singleButton.addEventListener('click', function(event){
+        event.preventDefault();
         counter = counter + 1;
         if (todoListElements.length){
-            todoListElements[0].appendChild(generateTodoElement('codeing ' + counter));
+            todoListElements[0].appendChild(generateTodoElement( + counter));
         }
     })
 }
